@@ -1,11 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Gatsby Contrib Tracker`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://dev-drupal-react-backend.pantheonsite.io/`,
+        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

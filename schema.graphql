@@ -1,0 +1,4468 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+"Node Interface"
+interface Node {
+    children: [Node!]!
+    id: ID!
+    internal: Internal!
+    parent: Node
+}
+
+type Directory implements Node {
+    absolutePath: String
+    accessTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    atime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    atimeMs: Float
+    base: String
+    birthTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    birthtime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    birthtimeMs: Float
+    blksize: Int
+    blocks: Int
+    changeTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    children: [Node!]!
+    ctime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    ctimeMs: Float
+    dev: Int
+    dir: String
+    ext: String
+    extension: String
+    gid: Int
+    id: ID!
+    ino: Int
+    internal: Internal!
+    mode: Int
+    modifiedTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    mtime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    mtimeMs: Float
+    name: String
+    nlink: Int
+    parent: Node
+    prettySize: String
+    rdev: Int
+    relativeDirectory: String
+    relativePath: String
+    root: String
+    size: Int
+    sourceInstanceName: String
+    uid: Int
+}
+
+type DirectoryConnection {
+    distinct(field: DirectoryFieldsEnum!): [String!]!
+    edges: [DirectoryEdge!]!
+    group(field: DirectoryFieldsEnum!, limit: Int, skip: Int): [DirectoryGroupConnection!]!
+    nodes: [Directory!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type DirectoryEdge {
+    next: Directory
+    node: Directory!
+    previous: Directory
+}
+
+type DirectoryGroupConnection {
+    edges: [DirectoryEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [Directory!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type File implements Node {
+    absolutePath: String
+    accessTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    atime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    atimeMs: Float
+    base: String
+    birthTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    birthtime: Date @deprecated(reason : "Use `birthTime` instead")
+    birthtimeMs: Float @deprecated(reason : "Use `birthTime` instead")
+    blksize: Int
+    blocks: Int
+    changeTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    childImageSharp: ImageSharp
+    children: [Node!]!
+    ctime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    ctimeMs: Float
+    dev: Int
+    dir: String
+    ext: String
+    extension: String
+    gid: Int
+    id: ID!
+    ino: Int
+    internal: Internal!
+    mode: Int
+    modifiedTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    mtime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    mtimeMs: Float
+    name: String
+    nlink: Int
+    parent: Node
+    prettySize: String
+    "Copy file to static directory and return public url to it"
+    publicURL: String
+    rdev: Int
+    relativeDirectory: String
+    relativePath: String
+    root: String
+    size: Int
+    sourceInstanceName: String
+    uid: Int
+    url: String
+}
+
+type FileConnection {
+    distinct(field: FileFieldsEnum!): [String!]!
+    edges: [FileEdge!]!
+    group(field: FileFieldsEnum!, limit: Int, skip: Int): [FileGroupConnection!]!
+    nodes: [File!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type FileEdge {
+    next: File
+    node: File!
+    previous: File
+}
+
+type FileGroupConnection {
+    edges: [FileEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [File!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type ImageSharp implements Node {
+    children: [Node!]!
+    fixed(background: String = "rgba(0,0,0,1)", base64Width: Int, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, pngCompressionSpeed: Int = 4, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, toFormatBase64: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, width: Int): ImageSharpFixed
+    fluid(
+        background: String = "rgba(0,0,0,1)",
+        base64Width: Int,
+        cropFocus: ImageCropFocus = ATTENTION,
+        duotone: DuotoneGradient,
+        fit: ImageFit = COVER,
+        grayscale: Boolean = false,
+        jpegProgressive: Boolean = true,
+        maxHeight: Int,
+        maxWidth: Int,
+        pngCompressionSpeed: Int = 4,
+        quality: Int,
+        rotate: Int = 0,
+        sizes: String = "",
+        #A list of image widths to be generated. Example: [ 200, 340, 520, 890 ]
+        srcSetBreakpoints: [Int] = [],
+        toFormat: ImageFormat = NO_CHANGE,
+        toFormatBase64: ImageFormat = NO_CHANGE,
+        traceSVG: Potrace,
+        trim: Float = 0.0
+    ): ImageSharpFluid
+    id: ID!
+    internal: Internal!
+    original: ImageSharpOriginal
+    parent: Node
+    resize(background: String = "rgba(0,0,0,1)", base64: Boolean = false, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, pngCompressionLevel: Int = 9, pngCompressionSpeed: Int = 4, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, width: Int): ImageSharpResize
+    resolutions(background: String = "rgba(0,0,0,1)", base64Width: Int, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, pngCompressionSpeed: Int = 4, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, toFormatBase64: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, width: Int): ImageSharpResolutions @deprecated(reason : "Resolutions was deprecated in Gatsby v2. It's been renamed to \"fixed\" https:\/\/example.com\/write-docs-and-fix-this-example-link")
+    sizes(
+        background: String = "rgba(0,0,0,1)",
+        base64Width: Int,
+        cropFocus: ImageCropFocus = ATTENTION,
+        duotone: DuotoneGradient,
+        fit: ImageFit = COVER,
+        grayscale: Boolean = false,
+        jpegProgressive: Boolean = true,
+        maxHeight: Int,
+        maxWidth: Int,
+        pngCompressionSpeed: Int = 4,
+        quality: Int,
+        rotate: Int = 0,
+        sizes: String = "",
+        #A list of image widths to be generated. Example: [ 200, 340, 520, 890 ]
+        srcSetBreakpoints: [Int] = [],
+        toFormat: ImageFormat = NO_CHANGE,
+        toFormatBase64: ImageFormat = NO_CHANGE,
+        traceSVG: Potrace,
+        trim: Float = 0.0
+    ): ImageSharpSizes @deprecated(reason : "Sizes was deprecated in Gatsby v2. It's been renamed to \"fluid\" https:\/\/example.com\/write-docs-and-fix-this-example-link")
+}
+
+type ImageSharpConnection {
+    distinct(field: ImageSharpFieldsEnum!): [String!]!
+    edges: [ImageSharpEdge!]!
+    group(field: ImageSharpFieldsEnum!, limit: Int, skip: Int): [ImageSharpGroupConnection!]!
+    nodes: [ImageSharp!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type ImageSharpEdge {
+    next: ImageSharp
+    node: ImageSharp!
+    previous: ImageSharp
+}
+
+type ImageSharpFixed {
+    aspectRatio: Float
+    base64: String
+    height: Float
+    originalName: String
+    src: String
+    srcSet: String
+    srcSetWebp: String
+    srcWebp: String
+    tracedSVG: String
+    width: Float
+}
+
+type ImageSharpFluid {
+    aspectRatio: Float
+    base64: String
+    originalImg: String
+    originalName: String
+    presentationHeight: Int
+    presentationWidth: Int
+    sizes: String
+    src: String
+    srcSet: String
+    srcSetWebp: String
+    srcWebp: String
+    tracedSVG: String
+}
+
+type ImageSharpGroupConnection {
+    edges: [ImageSharpEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [ImageSharp!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type ImageSharpOriginal {
+    height: Float
+    src: String
+    width: Float
+}
+
+type ImageSharpResize {
+    aspectRatio: Float
+    height: Int
+    originalName: String
+    src: String
+    tracedSVG: String
+    width: Int
+}
+
+type ImageSharpResolutions {
+    aspectRatio: Float
+    base64: String
+    height: Float
+    originalName: String
+    src: String
+    srcSet: String
+    srcSetWebp: String
+    srcWebp: String
+    tracedSVG: String
+    width: Float
+}
+
+type ImageSharpSizes {
+    aspectRatio: Float
+    base64: String
+    originalImg: String
+    originalName: String
+    presentationHeight: Int
+    presentationWidth: Int
+    sizes: String
+    src: String
+    srcSet: String
+    srcSetWebp: String
+    srcWebp: String
+    tracedSVG: String
+}
+
+type Internal {
+    content: String
+    contentDigest: String!
+    description: String
+    fieldOwners: [String]
+    ignoreType: Boolean
+    mediaType: String
+    owner: String!
+    type: String!
+}
+
+type PageInfo {
+    currentPage: Int!
+    hasNextPage: Boolean!
+    hasPreviousPage: Boolean!
+    itemCount: Int!
+    pageCount: Int!
+    perPage: Int
+}
+
+type Query {
+    allBlockBlock(filter: block__blockFilterInput, limit: Int, skip: Int, sort: block__blockSortInput): block__blockConnection!
+    allContactFormContactForm(filter: contact_form__contact_formFilterInput, limit: Int, skip: Int, sort: contact_form__contact_formSortInput): contact_form__contact_formConnection!
+    allDirectory(filter: DirectoryFilterInput, limit: Int, skip: Int, sort: DirectorySortInput): DirectoryConnection!
+    allFile(filter: FileFilterInput, limit: Int, skip: Int, sort: FileSortInput): FileConnection!
+    allFileFile(filter: file__fileFilterInput, limit: Int, skip: Int, sort: file__fileSortInput): file__fileConnection!
+    allImageSharp(filter: ImageSharpFilterInput, limit: Int, skip: Int, sort: ImageSharpSortInput): ImageSharpConnection!
+    allNodeArticle(filter: node__articleFilterInput, limit: Int, skip: Int, sort: node__articleSortInput): node__articleConnection!
+    allNodeCodeContribution(filter: node__code_contributionFilterInput, limit: Int, skip: Int, sort: node__code_contributionSortInput): node__code_contributionConnection!
+    allNodeTypeNodeType(filter: node_type__node_typeFilterInput, limit: Int, skip: Int, sort: node_type__node_typeSortInput): node_type__node_typeConnection!
+    allSearchPageSearchPage(filter: search_page__search_pageFilterInput, limit: Int, skip: Int, sort: search_page__search_pageSortInput): search_page__search_pageConnection!
+    allSite(filter: SiteFilterInput, limit: Int, skip: Int, sort: SiteSortInput): SiteConnection!
+    allSitePage(filter: SitePageFilterInput, limit: Int, skip: Int, sort: SitePageSortInput): SitePageConnection!
+    allSitePlugin(filter: SitePluginFilterInput, limit: Int, skip: Int, sort: SitePluginSortInput): SitePluginConnection!
+    allTaxonomyTermTags(filter: taxonomy_term__tagsFilterInput, limit: Int, skip: Int, sort: taxonomy_term__tagsSortInput): taxonomy_term__tagsConnection!
+    allUserUser(filter: user__userFilterInput, limit: Int, skip: Int, sort: user__userSortInput): user__userConnection!
+    blockBlock(_attributes_id: StringQueryOperatorInput, children: NodeFilterListInput, dependencies: block__blockDependenciesFilterInput, drupal_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, langcode: StringQueryOperatorInput, parent: NodeFilterInput, plugin: StringQueryOperatorInput, region: StringQueryOperatorInput, settings: block__blockSettingsFilterInput, status: BooleanQueryOperatorInput, theme: StringQueryOperatorInput, uuid: StringQueryOperatorInput, visibility: block__blockVisibilityFilterInput, weight: IntQueryOperatorInput): block__block
+    contactFormContactForm(_attributes_id: StringQueryOperatorInput, children: NodeFilterListInput, drupal_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, label: StringQueryOperatorInput, langcode: StringQueryOperatorInput, message: StringQueryOperatorInput, parent: NodeFilterInput, recipients: StringQueryOperatorInput, redirect: StringQueryOperatorInput, reply: StringQueryOperatorInput, status: BooleanQueryOperatorInput, uuid: StringQueryOperatorInput, weight: IntQueryOperatorInput): contact_form__contact_form
+    directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: IntQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
+    file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: IntQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput, url: StringQueryOperatorInput): File
+    fileFile(changed: IntQueryOperatorInput, children: NodeFilterListInput, created: IntQueryOperatorInput, drupal_id: StringQueryOperatorInput, fid: IntQueryOperatorInput, filemime: StringQueryOperatorInput, filename: StringQueryOperatorInput, filesize: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, langcode: StringQueryOperatorInput, localFile: FileFilterInput, parent: NodeFilterInput, relationships: file__fileRelationshipsFilterInput, status: BooleanQueryOperatorInput, uri: file__fileUriFilterInput, url: StringQueryOperatorInput, uuid: StringQueryOperatorInput): file__file
+    imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
+    nodeArticle(body: node__articleBodyFilterInput, changed: IntQueryOperatorInput, children: NodeFilterListInput, comment: node__articleCommentFilterInput, content_translation_outdated: BooleanQueryOperatorInput, content_translation_source: StringQueryOperatorInput, created: IntQueryOperatorInput, default_langcode: BooleanQueryOperatorInput, drupal_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, langcode: StringQueryOperatorInput, nid: IntQueryOperatorInput, parent: NodeFilterInput, path: node__articlePathFilterInput, promote: BooleanQueryOperatorInput, relationships: node__articleRelationshipsFilterInput, revision_timestamp: IntQueryOperatorInput, status: BooleanQueryOperatorInput, sticky: BooleanQueryOperatorInput, title: StringQueryOperatorInput, uuid: StringQueryOperatorInput, vid: IntQueryOperatorInput): node__article
+    nodeCodeContribution(body: node__code_contributionBodyFilterInput, changed: IntQueryOperatorInput, children: NodeFilterListInput, content_translation_outdated: BooleanQueryOperatorInput, content_translation_source: StringQueryOperatorInput, created: IntQueryOperatorInput, default_langcode: BooleanQueryOperatorInput, drupal_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, langcode: StringQueryOperatorInput, nid: IntQueryOperatorInput, parent: NodeFilterInput, path: node__code_contributionPathFilterInput, promote: BooleanQueryOperatorInput, relationships: node__code_contributionRelationshipsFilterInput, revision_timestamp: IntQueryOperatorInput, revision_translation_affected: BooleanQueryOperatorInput, status: BooleanQueryOperatorInput, sticky: BooleanQueryOperatorInput, title: StringQueryOperatorInput, uuid: StringQueryOperatorInput, vid: IntQueryOperatorInput): node__code_contribution
+    nodeTypeNodeType(children: NodeFilterListInput, dependencies: node_type__node_typeDependenciesFilterInput, description: StringQueryOperatorInput, display_submitted: BooleanQueryOperatorInput, drupal_id: StringQueryOperatorInput, help: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, langcode: StringQueryOperatorInput, name: StringQueryOperatorInput, new_revision: BooleanQueryOperatorInput, parent: NodeFilterInput, preview_mode: IntQueryOperatorInput, relationships: node_type__node_typeRelationshipsFilterInput, status: BooleanQueryOperatorInput, third_party_settings: node_type__node_typeThird_party_settingsFilterInput, type: StringQueryOperatorInput, uuid: StringQueryOperatorInput): node_type__node_type
+    searchPageSearchPage(_attributes_id: StringQueryOperatorInput, children: NodeFilterListInput, dependencies: search_page__search_pageDependenciesFilterInput, drupal_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, label: StringQueryOperatorInput, langcode: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, plugin: StringQueryOperatorInput, status: BooleanQueryOperatorInput, uuid: StringQueryOperatorInput, weight: IntQueryOperatorInput): search_page__search_page
+    site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
+    sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
+    sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
+    taxonomyTermTags(changed: IntQueryOperatorInput, children: NodeFilterListInput, default_langcode: BooleanQueryOperatorInput, drupal_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, langcode: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, status: BooleanQueryOperatorInput, tid: IntQueryOperatorInput, uuid: StringQueryOperatorInput, weight: IntQueryOperatorInput): taxonomy_term__tags
+    userUser(changed: IntQueryOperatorInput, children: NodeFilterListInput, created: IntQueryOperatorInput, default_langcode: BooleanQueryOperatorInput, drupal_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, langcode: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, relationships: user__userRelationshipsFilterInput, uid: IntQueryOperatorInput, user_picture: user__userUser_pictureFilterInput, uuid: StringQueryOperatorInput): user__user
+}
+
+type Site implements Node {
+    buildTime(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    children: [Node!]!
+    host: String
+    id: ID!
+    internal: Internal!
+    parent: Node
+    pathPrefix: String
+    polyfill: Boolean
+    port: Int
+    siteMetadata: SiteSiteMetadata
+}
+
+type SiteConnection {
+    distinct(field: SiteFieldsEnum!): [String!]!
+    edges: [SiteEdge!]!
+    group(field: SiteFieldsEnum!, limit: Int, skip: Int): [SiteGroupConnection!]!
+    nodes: [Site!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type SiteEdge {
+    next: Site
+    node: Site!
+    previous: Site
+}
+
+type SiteGroupConnection {
+    edges: [SiteEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [Site!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type SitePage implements Node {
+    children: [Node!]!
+    component: String
+    componentChunkName: String
+    componentPath: String
+    context: SitePageContext
+    id: ID!
+    internal: Internal!
+    internalComponentName: String
+    isCreatedByStatefulCreatePages: Boolean
+    parent: Node
+    path: String
+    pluginCreator: SitePlugin
+    pluginCreatorId: String
+}
+
+type SitePageConnection {
+    distinct(field: SitePageFieldsEnum!): [String!]!
+    edges: [SitePageEdge!]!
+    group(field: SitePageFieldsEnum!, limit: Int, skip: Int): [SitePageGroupConnection!]!
+    nodes: [SitePage!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type SitePageContext {
+    drupalId: String
+    nid: Int
+    slug: Int
+}
+
+type SitePageEdge {
+    next: SitePage
+    node: SitePage!
+    previous: SitePage
+}
+
+type SitePageGroupConnection {
+    edges: [SitePageEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [SitePage!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type SitePlugin implements Node {
+    browserAPIs: [String]
+    children: [Node!]!
+    id: ID!
+    internal: Internal!
+    name: String
+    nodeAPIs: [String]
+    packageJson: SitePluginPackageJson
+    parent: Node
+    pluginFilepath: String
+    pluginOptions: SitePluginPluginOptions
+    resolve: String
+    ssrAPIs: [String]
+    version: String
+}
+
+type SitePluginConnection {
+    distinct(field: SitePluginFieldsEnum!): [String!]!
+    edges: [SitePluginEdge!]!
+    group(field: SitePluginFieldsEnum!, limit: Int, skip: Int): [SitePluginGroupConnection!]!
+    nodes: [SitePlugin!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type SitePluginEdge {
+    next: SitePlugin
+    node: SitePlugin!
+    previous: SitePlugin
+}
+
+type SitePluginGroupConnection {
+    edges: [SitePluginEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [SitePlugin!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type SitePluginPackageJson {
+    dependencies: [SitePluginPackageJsonDependencies]
+    description: String
+    devDependencies: [SitePluginPackageJsonDevDependencies]
+    keywords: [String]
+    license: String
+    main: String
+    name: String
+    peerDependencies: [SitePluginPackageJsonPeerDependencies]
+    version: String
+}
+
+type SitePluginPackageJsonDependencies {
+    name: String
+    version: String
+}
+
+type SitePluginPackageJsonDevDependencies {
+    name: String
+    version: String
+}
+
+type SitePluginPackageJsonPeerDependencies {
+    name: String
+    version: String
+}
+
+type SitePluginPluginOptions {
+    apiBase: String
+    background_color: String
+    baseUrl: String
+    display: String
+    icon: String
+    name: String
+    path: String
+    pathCheck: Boolean
+    short_name: String
+    start_url: String
+    theme_color: String
+}
+
+type SiteSiteMetadata {
+    author: String
+    description: String
+    title: String
+}
+
+type block__block implements Node {
+    _attributes_id: String
+    children: [Node!]!
+    dependencies: block__blockDependencies
+    drupal_id: String
+    id: ID!
+    internal: Internal!
+    langcode: String
+    parent: Node
+    plugin: String
+    region: String
+    settings: block__blockSettings
+    status: Boolean
+    theme: String
+    uuid: String
+    visibility: block__blockVisibility
+    weight: Int
+}
+
+type block__blockConnection {
+    distinct(field: block__blockFieldsEnum!): [String!]!
+    edges: [block__blockEdge!]!
+    group(field: block__blockFieldsEnum!, limit: Int, skip: Int): [block__blockGroupConnection!]!
+    nodes: [block__block!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type block__blockDependencies {
+    config: [String]
+    module: [String]
+    theme: [String]
+}
+
+type block__blockEdge {
+    next: block__block
+    node: block__block!
+    previous: block__block
+}
+
+type block__blockGroupConnection {
+    edges: [block__blockEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [block__block!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type block__blockSettings {
+    depth: Int
+    id: String
+    label: String
+    label_display: String
+    level: Int
+    primary: Boolean
+    provider: String
+    secondary: Boolean
+    use_site_logo: Boolean
+    use_site_name: Boolean
+    use_site_slogan: Boolean
+}
+
+type block__blockVisibility {
+    language: block__blockVisibilityLanguage
+}
+
+type block__blockVisibilityLanguage {
+    context_mapping: block__blockVisibilityLanguageContext_mapping
+    id: String
+    langcodes: block__blockVisibilityLanguageLangcodes
+    negate: Boolean
+}
+
+type block__blockVisibilityLanguageContext_mapping {
+    language: String
+}
+
+type block__blockVisibilityLanguageLangcodes {
+    en: String
+    gu: String
+    hi: String
+}
+
+type contact_form__contact_form implements Node {
+    _attributes_id: String
+    children: [Node!]!
+    drupal_id: String
+    id: ID!
+    internal: Internal!
+    label: String
+    langcode: String
+    message: String
+    parent: Node
+    recipients: [String]
+    redirect: String
+    reply: String
+    status: Boolean
+    uuid: String
+    weight: Int
+}
+
+type contact_form__contact_formConnection {
+    distinct(field: contact_form__contact_formFieldsEnum!): [String!]!
+    edges: [contact_form__contact_formEdge!]!
+    group(field: contact_form__contact_formFieldsEnum!, limit: Int, skip: Int): [contact_form__contact_formGroupConnection!]!
+    nodes: [contact_form__contact_form!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type contact_form__contact_formEdge {
+    next: contact_form__contact_form
+    node: contact_form__contact_form!
+    previous: contact_form__contact_form
+}
+
+type contact_form__contact_formGroupConnection {
+    edges: [contact_form__contact_formEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [contact_form__contact_form!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type file__file implements Node {
+    changed: Int
+    children: [Node!]!
+    created: Int
+    drupal_id: String
+    fid: Int
+    filemime: String
+    filename: String
+    filesize: Int
+    id: ID!
+    internal: Internal!
+    langcode: String
+    localFile: File
+    parent: Node
+    relationships: file__fileRelationships
+    status: Boolean
+    uri: file__fileUri
+    url: String
+    uuid: String
+}
+
+type file__fileConnection {
+    distinct(field: file__fileFieldsEnum!): [String!]!
+    edges: [file__fileEdge!]!
+    group(field: file__fileFieldsEnum!, limit: Int, skip: Int): [file__fileGroupConnection!]!
+    nodes: [file__file!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type file__fileEdge {
+    next: file__file
+    node: file__file!
+    previous: file__file
+}
+
+type file__fileGroupConnection {
+    edges: [file__fileEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [file__file!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type file__fileRelationships {
+    uid: user__user
+    user__user: [user__user]
+}
+
+type file__fileUri {
+    url: String
+    value: String
+}
+
+type node__article implements Node {
+    body: node__articleBody
+    changed: Int
+    children: [Node!]!
+    comment: node__articleComment
+    content_translation_outdated: Boolean
+    content_translation_source: String
+    created: Int
+    default_langcode: Boolean
+    drupal_id: String
+    id: ID!
+    internal: Internal!
+    langcode: String
+    nid: Int
+    parent: Node
+    path: node__articlePath
+    promote: Boolean
+    relationships: node__articleRelationships
+    revision_timestamp: Int
+    status: Boolean
+    sticky: Boolean
+    title: String
+    uuid: String
+    vid: Int
+}
+
+type node__articleBody {
+    format: String
+    processed: String
+    summary: String
+    value: String
+}
+
+type node__articleComment {
+    cid: Int
+    comment_count: Int
+    last_comment_timestamp: Int
+    last_comment_uid: Int
+    status: Int
+}
+
+type node__articleConnection {
+    distinct(field: node__articleFieldsEnum!): [String!]!
+    edges: [node__articleEdge!]!
+    group(field: node__articleFieldsEnum!, limit: Int, skip: Int): [node__articleGroupConnection!]!
+    nodes: [node__article!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type node__articleEdge {
+    next: node__article
+    node: node__article!
+    previous: node__article
+}
+
+type node__articleGroupConnection {
+    edges: [node__articleEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [node__article!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type node__articlePath {
+    langcode: String
+}
+
+type node__articleRelationships {
+    revision_uid: user__user
+    type: node_type__node_type
+    uid: user__user
+}
+
+type node__code_contribution implements Node {
+    body: node__code_contributionBody
+    changed: Int
+    children: [Node!]!
+    content_translation_outdated: Boolean
+    content_translation_source: String
+    created: Int
+    default_langcode: Boolean
+    drupal_id: String
+    id: ID!
+    internal: Internal!
+    langcode: String
+    nid: Int
+    parent: Node
+    path: node__code_contributionPath
+    promote: Boolean
+    relationships: node__code_contributionRelationships
+    revision_timestamp: Int
+    revision_translation_affected: Boolean
+    status: Boolean
+    sticky: Boolean
+    title: String
+    uuid: String
+    vid: Int
+}
+
+type node__code_contributionBody {
+    format: String
+    processed: String
+    summary: String
+    value: String
+}
+
+type node__code_contributionConnection {
+    distinct(field: node__code_contributionFieldsEnum!): [String!]!
+    edges: [node__code_contributionEdge!]!
+    group(field: node__code_contributionFieldsEnum!, limit: Int, skip: Int): [node__code_contributionGroupConnection!]!
+    nodes: [node__code_contribution!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type node__code_contributionEdge {
+    next: node__code_contribution
+    node: node__code_contribution!
+    previous: node__code_contribution
+}
+
+type node__code_contributionGroupConnection {
+    edges: [node__code_contributionEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [node__code_contribution!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type node__code_contributionPath {
+    langcode: String
+}
+
+type node__code_contributionRelationships {
+    revision_uid: user__user
+    type: node_type__node_type
+    uid: user__user
+}
+
+type node_type__node_type implements Node {
+    children: [Node!]!
+    dependencies: node_type__node_typeDependencies
+    description: String
+    display_submitted: Boolean
+    drupal_id: String
+    help: String
+    id: ID!
+    internal: Internal!
+    langcode: String
+    name: String
+    new_revision: Boolean
+    parent: Node
+    preview_mode: Int
+    relationships: node_type__node_typeRelationships
+    status: Boolean
+    third_party_settings: node_type__node_typeThird_party_settings
+    type: String
+    uuid: String
+}
+
+type node_type__node_typeConnection {
+    distinct(field: node_type__node_typeFieldsEnum!): [String!]!
+    edges: [node_type__node_typeEdge!]!
+    group(field: node_type__node_typeFieldsEnum!, limit: Int, skip: Int): [node_type__node_typeGroupConnection!]!
+    nodes: [node_type__node_type!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type node_type__node_typeDependencies {
+    module: [String]
+}
+
+type node_type__node_typeEdge {
+    next: node_type__node_type
+    node: node_type__node_type!
+    previous: node_type__node_type
+}
+
+type node_type__node_typeGroupConnection {
+    edges: [node_type__node_typeEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [node_type__node_type!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type node_type__node_typeRelationships {
+    node__article: [node__article]
+    node__code_contribution: [node__code_contribution]
+}
+
+type node_type__node_typeThird_party_settings {
+    menu_ui: node_type__node_typeThird_party_settingsMenu_ui
+}
+
+type node_type__node_typeThird_party_settingsMenu_ui {
+    available_menus: [String]
+    parent: String
+}
+
+type search_page__search_page implements Node {
+    _attributes_id: String
+    children: [Node!]!
+    dependencies: search_page__search_pageDependencies
+    drupal_id: String
+    id: ID!
+    internal: Internal!
+    label: String
+    langcode: String
+    parent: Node
+    path: String
+    plugin: String
+    status: Boolean
+    uuid: String
+    weight: Int
+}
+
+type search_page__search_pageConnection {
+    distinct(field: search_page__search_pageFieldsEnum!): [String!]!
+    edges: [search_page__search_pageEdge!]!
+    group(field: search_page__search_pageFieldsEnum!, limit: Int, skip: Int): [search_page__search_pageGroupConnection!]!
+    nodes: [search_page__search_page!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type search_page__search_pageDependencies {
+    module: [String]
+}
+
+type search_page__search_pageEdge {
+    next: search_page__search_page
+    node: search_page__search_page!
+    previous: search_page__search_page
+}
+
+type search_page__search_pageGroupConnection {
+    edges: [search_page__search_pageEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [search_page__search_page!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type taxonomy_term__tags implements Node {
+    changed: Int
+    children: [Node!]!
+    default_langcode: Boolean
+    drupal_id: String
+    id: ID!
+    internal: Internal!
+    langcode: String
+    name: String
+    parent: Node
+    status: Boolean
+    tid: Int
+    uuid: String
+    weight: Int
+}
+
+type taxonomy_term__tagsConnection {
+    distinct(field: taxonomy_term__tagsFieldsEnum!): [String!]!
+    edges: [taxonomy_term__tagsEdge!]!
+    group(field: taxonomy_term__tagsFieldsEnum!, limit: Int, skip: Int): [taxonomy_term__tagsGroupConnection!]!
+    nodes: [taxonomy_term__tags!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type taxonomy_term__tagsEdge {
+    next: taxonomy_term__tags
+    node: taxonomy_term__tags!
+    previous: taxonomy_term__tags
+}
+
+type taxonomy_term__tagsGroupConnection {
+    edges: [taxonomy_term__tagsEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [taxonomy_term__tags!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type user__user implements Node {
+    changed: Int
+    children: [Node!]!
+    created: Int
+    default_langcode: Boolean
+    drupal_id: String
+    id: ID!
+    internal: Internal!
+    langcode: String
+    name: String
+    parent: Node
+    relationships: user__userRelationships
+    uid: Int
+    user_picture: user__userUser_picture
+    uuid: String
+}
+
+type user__userConnection {
+    distinct(field: user__userFieldsEnum!): [String!]!
+    edges: [user__userEdge!]!
+    group(field: user__userFieldsEnum!, limit: Int, skip: Int): [user__userGroupConnection!]!
+    nodes: [user__user!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type user__userEdge {
+    next: user__user
+    node: user__user!
+    previous: user__user
+}
+
+type user__userGroupConnection {
+    edges: [user__userEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [user__user!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type user__userRelationships {
+    file__file: [file__file]
+    node__article: [node__article]
+    node__code_contribution: [node__code_contribution]
+    user_picture: file__file
+}
+
+type user__userUser_picture {
+    alt: String
+    height: Int
+    title: String
+    width: Int
+}
+
+enum DirectoryFieldsEnum {
+    absolutePath
+    accessTime
+    atime
+    atimeMs
+    base
+    birthTime
+    birthtime
+    birthtimeMs
+    blksize
+    blocks
+    changeTime
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    ctime
+    ctimeMs
+    dev
+    dir
+    ext
+    extension
+    gid
+    id
+    ino
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    mode
+    modifiedTime
+    mtime
+    mtimeMs
+    name
+    nlink
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    prettySize
+    rdev
+    relativeDirectory
+    relativePath
+    root
+    size
+    sourceInstanceName
+    uid
+}
+
+enum FileFieldsEnum {
+    absolutePath
+    accessTime
+    atime
+    atimeMs
+    base
+    birthTime
+    birthtime
+    birthtimeMs
+    blksize
+    blocks
+    changeTime
+    childImageSharp___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___id
+    childImageSharp___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___original___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___original___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___original___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resolutions___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___sizes___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    ctime
+    ctimeMs
+    dev
+    dir
+    ext
+    extension
+    gid
+    id
+    ino
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    mode
+    modifiedTime
+    mtime
+    mtimeMs
+    name
+    nlink
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    prettySize
+    publicURL
+    rdev
+    relativeDirectory
+    relativePath
+    root
+    size
+    sourceInstanceName
+    uid
+    url
+}
+
+enum ImageCropFocus {
+    ATTENTION
+    CENTER
+    EAST
+    ENTROPY
+    NORTH
+    NORTHEAST
+    NORTHWEST
+    SOUTH
+    SOUTHEAST
+    SOUTHWEST
+    WEST
+}
+
+enum ImageFit {
+    CONTAIN
+    COVER
+    FILL
+}
+
+enum ImageFormat {
+    JPG
+    NO_CHANGE
+    PNG
+    WEBP
+}
+
+enum ImageSharpFieldsEnum {
+    children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    id
+    internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    original___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    original___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    original___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    resolutions___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    sizes___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+}
+
+enum PotraceTurnPolicy {
+    TURNPOLICY_BLACK
+    TURNPOLICY_LEFT
+    TURNPOLICY_MAJORITY
+    TURNPOLICY_MINORITY
+    TURNPOLICY_RIGHT
+    TURNPOLICY_WHITE
+}
+
+enum SiteFieldsEnum {
+    buildTime
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    host
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    pathPrefix
+    polyfill
+    port
+    siteMetadata___author
+    siteMetadata___description
+    siteMetadata___title
+}
+
+enum SitePageFieldsEnum {
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    component
+    componentChunkName
+    componentPath
+    context___drupalId
+    context___nid
+    context___slug
+    id
+    internalComponentName
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    isCreatedByStatefulCreatePages
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    path
+    pluginCreatorId
+    pluginCreator___browserAPIs
+    pluginCreator___children
+    pluginCreator___children___children
+    pluginCreator___children___children___children
+    pluginCreator___children___children___id
+    pluginCreator___children___id
+    pluginCreator___children___internal___content
+    pluginCreator___children___internal___contentDigest
+    pluginCreator___children___internal___description
+    pluginCreator___children___internal___fieldOwners
+    pluginCreator___children___internal___ignoreType
+    pluginCreator___children___internal___mediaType
+    pluginCreator___children___internal___owner
+    pluginCreator___children___internal___type
+    pluginCreator___children___parent___children
+    pluginCreator___children___parent___id
+    pluginCreator___id
+    pluginCreator___internal___content
+    pluginCreator___internal___contentDigest
+    pluginCreator___internal___description
+    pluginCreator___internal___fieldOwners
+    pluginCreator___internal___ignoreType
+    pluginCreator___internal___mediaType
+    pluginCreator___internal___owner
+    pluginCreator___internal___type
+    pluginCreator___name
+    pluginCreator___nodeAPIs
+    pluginCreator___packageJson___dependencies
+    pluginCreator___packageJson___dependencies___name
+    pluginCreator___packageJson___dependencies___version
+    pluginCreator___packageJson___description
+    pluginCreator___packageJson___devDependencies
+    pluginCreator___packageJson___devDependencies___name
+    pluginCreator___packageJson___devDependencies___version
+    pluginCreator___packageJson___keywords
+    pluginCreator___packageJson___license
+    pluginCreator___packageJson___main
+    pluginCreator___packageJson___name
+    pluginCreator___packageJson___peerDependencies
+    pluginCreator___packageJson___peerDependencies___name
+    pluginCreator___packageJson___peerDependencies___version
+    pluginCreator___packageJson___version
+    pluginCreator___parent___children
+    pluginCreator___parent___children___children
+    pluginCreator___parent___children___id
+    pluginCreator___parent___id
+    pluginCreator___parent___internal___content
+    pluginCreator___parent___internal___contentDigest
+    pluginCreator___parent___internal___description
+    pluginCreator___parent___internal___fieldOwners
+    pluginCreator___parent___internal___ignoreType
+    pluginCreator___parent___internal___mediaType
+    pluginCreator___parent___internal___owner
+    pluginCreator___parent___internal___type
+    pluginCreator___parent___parent___children
+    pluginCreator___parent___parent___id
+    pluginCreator___pluginFilepath
+    pluginCreator___pluginOptions___apiBase
+    pluginCreator___pluginOptions___background_color
+    pluginCreator___pluginOptions___baseUrl
+    pluginCreator___pluginOptions___display
+    pluginCreator___pluginOptions___icon
+    pluginCreator___pluginOptions___name
+    pluginCreator___pluginOptions___path
+    pluginCreator___pluginOptions___pathCheck
+    pluginCreator___pluginOptions___short_name
+    pluginCreator___pluginOptions___start_url
+    pluginCreator___pluginOptions___theme_color
+    pluginCreator___resolve
+    pluginCreator___ssrAPIs
+    pluginCreator___version
+}
+
+enum SitePluginFieldsEnum {
+    browserAPIs
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    name
+    nodeAPIs
+    packageJson___dependencies
+    packageJson___dependencies___name
+    packageJson___dependencies___version
+    packageJson___description
+    packageJson___devDependencies
+    packageJson___devDependencies___name
+    packageJson___devDependencies___version
+    packageJson___keywords
+    packageJson___license
+    packageJson___main
+    packageJson___name
+    packageJson___peerDependencies
+    packageJson___peerDependencies___name
+    packageJson___peerDependencies___version
+    packageJson___version
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    pluginFilepath
+    pluginOptions___apiBase
+    pluginOptions___background_color
+    pluginOptions___baseUrl
+    pluginOptions___display
+    pluginOptions___icon
+    pluginOptions___name
+    pluginOptions___path
+    pluginOptions___pathCheck
+    pluginOptions___short_name
+    pluginOptions___start_url
+    pluginOptions___theme_color
+    resolve
+    ssrAPIs
+    version
+}
+
+enum SortOrderEnum {
+    ASC
+    DESC
+}
+
+enum block__blockFieldsEnum {
+    _attributes_id
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    dependencies___config
+    dependencies___module
+    dependencies___theme
+    drupal_id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    langcode
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    plugin
+    region
+    settings___depth
+    settings___id
+    settings___label
+    settings___label_display
+    settings___level
+    settings___primary
+    settings___provider
+    settings___secondary
+    settings___use_site_logo
+    settings___use_site_name
+    settings___use_site_slogan
+    status
+    theme
+    uuid
+    visibility___language___context_mapping___language
+    visibility___language___id
+    visibility___language___langcodes___en
+    visibility___language___langcodes___gu
+    visibility___language___langcodes___hi
+    visibility___language___negate
+    weight
+}
+
+enum contact_form__contact_formFieldsEnum {
+    _attributes_id
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    drupal_id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    label
+    langcode
+    message
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    recipients
+    redirect
+    reply
+    status
+    uuid
+    weight
+}
+
+enum file__fileFieldsEnum {
+    changed
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    created
+    drupal_id
+    fid
+    filemime
+    filename
+    filesize
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    langcode
+    localFile___absolutePath
+    localFile___accessTime
+    localFile___atime
+    localFile___atimeMs
+    localFile___base
+    localFile___birthTime
+    localFile___birthtime
+    localFile___birthtimeMs
+    localFile___blksize
+    localFile___blocks
+    localFile___changeTime
+    localFile___childImageSharp___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fixed___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___id
+    localFile___childImageSharp___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___original___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___original___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___original___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resize___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resize___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resize___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resize___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resize___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resize___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___resolutions___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___childImageSharp___sizes___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    localFile___children
+    localFile___children___children
+    localFile___children___children___children
+    localFile___children___children___id
+    localFile___children___id
+    localFile___children___internal___content
+    localFile___children___internal___contentDigest
+    localFile___children___internal___description
+    localFile___children___internal___fieldOwners
+    localFile___children___internal___ignoreType
+    localFile___children___internal___mediaType
+    localFile___children___internal___owner
+    localFile___children___internal___type
+    localFile___children___parent___children
+    localFile___children___parent___id
+    localFile___ctime
+    localFile___ctimeMs
+    localFile___dev
+    localFile___dir
+    localFile___ext
+    localFile___extension
+    localFile___gid
+    localFile___id
+    localFile___ino
+    localFile___internal___content
+    localFile___internal___contentDigest
+    localFile___internal___description
+    localFile___internal___fieldOwners
+    localFile___internal___ignoreType
+    localFile___internal___mediaType
+    localFile___internal___owner
+    localFile___internal___type
+    localFile___mode
+    localFile___modifiedTime
+    localFile___mtime
+    localFile___mtimeMs
+    localFile___name
+    localFile___nlink
+    localFile___parent___children
+    localFile___parent___children___children
+    localFile___parent___children___id
+    localFile___parent___id
+    localFile___parent___internal___content
+    localFile___parent___internal___contentDigest
+    localFile___parent___internal___description
+    localFile___parent___internal___fieldOwners
+    localFile___parent___internal___ignoreType
+    localFile___parent___internal___mediaType
+    localFile___parent___internal___owner
+    localFile___parent___internal___type
+    localFile___parent___parent___children
+    localFile___parent___parent___id
+    localFile___prettySize
+    localFile___publicURL
+    localFile___rdev
+    localFile___relativeDirectory
+    localFile___relativePath
+    localFile___root
+    localFile___size
+    localFile___sourceInstanceName
+    localFile___uid
+    localFile___url
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    relationships___uid___changed
+    relationships___uid___children
+    relationships___uid___children___children
+    relationships___uid___children___id
+    relationships___uid___created
+    relationships___uid___default_langcode
+    relationships___uid___drupal_id
+    relationships___uid___id
+    relationships___uid___internal___content
+    relationships___uid___internal___contentDigest
+    relationships___uid___internal___description
+    relationships___uid___internal___fieldOwners
+    relationships___uid___internal___ignoreType
+    relationships___uid___internal___mediaType
+    relationships___uid___internal___owner
+    relationships___uid___internal___type
+    relationships___uid___langcode
+    relationships___uid___name
+    relationships___uid___parent___children
+    relationships___uid___parent___id
+    relationships___uid___relationships___file__file
+    relationships___uid___relationships___node__article
+    relationships___uid___relationships___node__code_contribution
+    relationships___uid___uid
+    relationships___uid___user_picture___alt
+    relationships___uid___user_picture___height
+    relationships___uid___user_picture___title
+    relationships___uid___user_picture___width
+    relationships___uid___uuid
+    relationships___user__user
+    relationships___user__user___changed
+    relationships___user__user___children
+    relationships___user__user___children___children
+    relationships___user__user___children___id
+    relationships___user__user___created
+    relationships___user__user___default_langcode
+    relationships___user__user___drupal_id
+    relationships___user__user___id
+    relationships___user__user___internal___content
+    relationships___user__user___internal___contentDigest
+    relationships___user__user___internal___description
+    relationships___user__user___internal___fieldOwners
+    relationships___user__user___internal___ignoreType
+    relationships___user__user___internal___mediaType
+    relationships___user__user___internal___owner
+    relationships___user__user___internal___type
+    relationships___user__user___langcode
+    relationships___user__user___name
+    relationships___user__user___parent___children
+    relationships___user__user___parent___id
+    relationships___user__user___relationships___file__file
+    relationships___user__user___relationships___node__article
+    relationships___user__user___relationships___node__code_contribution
+    relationships___user__user___uid
+    relationships___user__user___user_picture___alt
+    relationships___user__user___user_picture___height
+    relationships___user__user___user_picture___title
+    relationships___user__user___user_picture___width
+    relationships___user__user___uuid
+    status
+    uri___url
+    uri___value
+    url
+    uuid
+}
+
+enum node__articleFieldsEnum {
+    body___format
+    body___processed
+    body___summary
+    body___value
+    changed
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    comment___cid
+    comment___comment_count
+    comment___last_comment_timestamp
+    comment___last_comment_uid
+    comment___status
+    content_translation_outdated
+    content_translation_source
+    created
+    default_langcode
+    drupal_id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    langcode
+    nid
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    path___langcode
+    promote
+    relationships___revision_uid___changed
+    relationships___revision_uid___children
+    relationships___revision_uid___children___children
+    relationships___revision_uid___children___id
+    relationships___revision_uid___created
+    relationships___revision_uid___default_langcode
+    relationships___revision_uid___drupal_id
+    relationships___revision_uid___id
+    relationships___revision_uid___internal___content
+    relationships___revision_uid___internal___contentDigest
+    relationships___revision_uid___internal___description
+    relationships___revision_uid___internal___fieldOwners
+    relationships___revision_uid___internal___ignoreType
+    relationships___revision_uid___internal___mediaType
+    relationships___revision_uid___internal___owner
+    relationships___revision_uid___internal___type
+    relationships___revision_uid___langcode
+    relationships___revision_uid___name
+    relationships___revision_uid___parent___children
+    relationships___revision_uid___parent___id
+    relationships___revision_uid___relationships___file__file
+    relationships___revision_uid___relationships___node__article
+    relationships___revision_uid___relationships___node__code_contribution
+    relationships___revision_uid___uid
+    relationships___revision_uid___user_picture___alt
+    relationships___revision_uid___user_picture___height
+    relationships___revision_uid___user_picture___title
+    relationships___revision_uid___user_picture___width
+    relationships___revision_uid___uuid
+    relationships___type___children
+    relationships___type___children___children
+    relationships___type___children___id
+    relationships___type___dependencies___module
+    relationships___type___description
+    relationships___type___display_submitted
+    relationships___type___drupal_id
+    relationships___type___help
+    relationships___type___id
+    relationships___type___internal___content
+    relationships___type___internal___contentDigest
+    relationships___type___internal___description
+    relationships___type___internal___fieldOwners
+    relationships___type___internal___ignoreType
+    relationships___type___internal___mediaType
+    relationships___type___internal___owner
+    relationships___type___internal___type
+    relationships___type___langcode
+    relationships___type___name
+    relationships___type___new_revision
+    relationships___type___parent___children
+    relationships___type___parent___id
+    relationships___type___preview_mode
+    relationships___type___relationships___node__article
+    relationships___type___relationships___node__code_contribution
+    relationships___type___status
+    relationships___type___type
+    relationships___type___uuid
+    relationships___uid___changed
+    relationships___uid___children
+    relationships___uid___children___children
+    relationships___uid___children___id
+    relationships___uid___created
+    relationships___uid___default_langcode
+    relationships___uid___drupal_id
+    relationships___uid___id
+    relationships___uid___internal___content
+    relationships___uid___internal___contentDigest
+    relationships___uid___internal___description
+    relationships___uid___internal___fieldOwners
+    relationships___uid___internal___ignoreType
+    relationships___uid___internal___mediaType
+    relationships___uid___internal___owner
+    relationships___uid___internal___type
+    relationships___uid___langcode
+    relationships___uid___name
+    relationships___uid___parent___children
+    relationships___uid___parent___id
+    relationships___uid___relationships___file__file
+    relationships___uid___relationships___node__article
+    relationships___uid___relationships___node__code_contribution
+    relationships___uid___uid
+    relationships___uid___user_picture___alt
+    relationships___uid___user_picture___height
+    relationships___uid___user_picture___title
+    relationships___uid___user_picture___width
+    relationships___uid___uuid
+    revision_timestamp
+    status
+    sticky
+    title
+    uuid
+    vid
+}
+
+enum node__code_contributionFieldsEnum {
+    body___format
+    body___processed
+    body___summary
+    body___value
+    changed
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    content_translation_outdated
+    content_translation_source
+    created
+    default_langcode
+    drupal_id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    langcode
+    nid
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    path___langcode
+    promote
+    relationships___revision_uid___changed
+    relationships___revision_uid___children
+    relationships___revision_uid___children___children
+    relationships___revision_uid___children___id
+    relationships___revision_uid___created
+    relationships___revision_uid___default_langcode
+    relationships___revision_uid___drupal_id
+    relationships___revision_uid___id
+    relationships___revision_uid___internal___content
+    relationships___revision_uid___internal___contentDigest
+    relationships___revision_uid___internal___description
+    relationships___revision_uid___internal___fieldOwners
+    relationships___revision_uid___internal___ignoreType
+    relationships___revision_uid___internal___mediaType
+    relationships___revision_uid___internal___owner
+    relationships___revision_uid___internal___type
+    relationships___revision_uid___langcode
+    relationships___revision_uid___name
+    relationships___revision_uid___parent___children
+    relationships___revision_uid___parent___id
+    relationships___revision_uid___relationships___file__file
+    relationships___revision_uid___relationships___node__article
+    relationships___revision_uid___relationships___node__code_contribution
+    relationships___revision_uid___uid
+    relationships___revision_uid___user_picture___alt
+    relationships___revision_uid___user_picture___height
+    relationships___revision_uid___user_picture___title
+    relationships___revision_uid___user_picture___width
+    relationships___revision_uid___uuid
+    relationships___type___children
+    relationships___type___children___children
+    relationships___type___children___id
+    relationships___type___dependencies___module
+    relationships___type___description
+    relationships___type___display_submitted
+    relationships___type___drupal_id
+    relationships___type___help
+    relationships___type___id
+    relationships___type___internal___content
+    relationships___type___internal___contentDigest
+    relationships___type___internal___description
+    relationships___type___internal___fieldOwners
+    relationships___type___internal___ignoreType
+    relationships___type___internal___mediaType
+    relationships___type___internal___owner
+    relationships___type___internal___type
+    relationships___type___langcode
+    relationships___type___name
+    relationships___type___new_revision
+    relationships___type___parent___children
+    relationships___type___parent___id
+    relationships___type___preview_mode
+    relationships___type___relationships___node__article
+    relationships___type___relationships___node__code_contribution
+    relationships___type___status
+    relationships___type___type
+    relationships___type___uuid
+    relationships___uid___changed
+    relationships___uid___children
+    relationships___uid___children___children
+    relationships___uid___children___id
+    relationships___uid___created
+    relationships___uid___default_langcode
+    relationships___uid___drupal_id
+    relationships___uid___id
+    relationships___uid___internal___content
+    relationships___uid___internal___contentDigest
+    relationships___uid___internal___description
+    relationships___uid___internal___fieldOwners
+    relationships___uid___internal___ignoreType
+    relationships___uid___internal___mediaType
+    relationships___uid___internal___owner
+    relationships___uid___internal___type
+    relationships___uid___langcode
+    relationships___uid___name
+    relationships___uid___parent___children
+    relationships___uid___parent___id
+    relationships___uid___relationships___file__file
+    relationships___uid___relationships___node__article
+    relationships___uid___relationships___node__code_contribution
+    relationships___uid___uid
+    relationships___uid___user_picture___alt
+    relationships___uid___user_picture___height
+    relationships___uid___user_picture___title
+    relationships___uid___user_picture___width
+    relationships___uid___uuid
+    revision_timestamp
+    revision_translation_affected
+    status
+    sticky
+    title
+    uuid
+    vid
+}
+
+enum node_type__node_typeFieldsEnum {
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    dependencies___module
+    description
+    display_submitted
+    drupal_id
+    help
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    langcode
+    name
+    new_revision
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    preview_mode
+    relationships___node__article
+    relationships___node__article___body___format
+    relationships___node__article___body___processed
+    relationships___node__article___body___summary
+    relationships___node__article___body___value
+    relationships___node__article___changed
+    relationships___node__article___children
+    relationships___node__article___children___children
+    relationships___node__article___children___id
+    relationships___node__article___comment___cid
+    relationships___node__article___comment___comment_count
+    relationships___node__article___comment___last_comment_timestamp
+    relationships___node__article___comment___last_comment_uid
+    relationships___node__article___comment___status
+    relationships___node__article___content_translation_outdated
+    relationships___node__article___content_translation_source
+    relationships___node__article___created
+    relationships___node__article___default_langcode
+    relationships___node__article___drupal_id
+    relationships___node__article___id
+    relationships___node__article___internal___content
+    relationships___node__article___internal___contentDigest
+    relationships___node__article___internal___description
+    relationships___node__article___internal___fieldOwners
+    relationships___node__article___internal___ignoreType
+    relationships___node__article___internal___mediaType
+    relationships___node__article___internal___owner
+    relationships___node__article___internal___type
+    relationships___node__article___langcode
+    relationships___node__article___nid
+    relationships___node__article___parent___children
+    relationships___node__article___parent___id
+    relationships___node__article___path___langcode
+    relationships___node__article___promote
+    relationships___node__article___revision_timestamp
+    relationships___node__article___status
+    relationships___node__article___sticky
+    relationships___node__article___title
+    relationships___node__article___uuid
+    relationships___node__article___vid
+    relationships___node__code_contribution
+    relationships___node__code_contribution___body___format
+    relationships___node__code_contribution___body___processed
+    relationships___node__code_contribution___body___summary
+    relationships___node__code_contribution___body___value
+    relationships___node__code_contribution___changed
+    relationships___node__code_contribution___children
+    relationships___node__code_contribution___children___children
+    relationships___node__code_contribution___children___id
+    relationships___node__code_contribution___content_translation_outdated
+    relationships___node__code_contribution___content_translation_source
+    relationships___node__code_contribution___created
+    relationships___node__code_contribution___default_langcode
+    relationships___node__code_contribution___drupal_id
+    relationships___node__code_contribution___id
+    relationships___node__code_contribution___internal___content
+    relationships___node__code_contribution___internal___contentDigest
+    relationships___node__code_contribution___internal___description
+    relationships___node__code_contribution___internal___fieldOwners
+    relationships___node__code_contribution___internal___ignoreType
+    relationships___node__code_contribution___internal___mediaType
+    relationships___node__code_contribution___internal___owner
+    relationships___node__code_contribution___internal___type
+    relationships___node__code_contribution___langcode
+    relationships___node__code_contribution___nid
+    relationships___node__code_contribution___parent___children
+    relationships___node__code_contribution___parent___id
+    relationships___node__code_contribution___path___langcode
+    relationships___node__code_contribution___promote
+    relationships___node__code_contribution___revision_timestamp
+    relationships___node__code_contribution___revision_translation_affected
+    relationships___node__code_contribution___status
+    relationships___node__code_contribution___sticky
+    relationships___node__code_contribution___title
+    relationships___node__code_contribution___uuid
+    relationships___node__code_contribution___vid
+    status
+    third_party_settings___menu_ui___available_menus
+    third_party_settings___menu_ui___parent
+    type
+    uuid
+}
+
+enum search_page__search_pageFieldsEnum {
+    _attributes_id
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    dependencies___module
+    drupal_id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    label
+    langcode
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    path
+    plugin
+    status
+    uuid
+    weight
+}
+
+enum taxonomy_term__tagsFieldsEnum {
+    changed
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    default_langcode
+    drupal_id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    langcode
+    name
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    status
+    tid
+    uuid
+    weight
+}
+
+enum user__userFieldsEnum {
+    changed
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    created
+    default_langcode
+    drupal_id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    langcode
+    name
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    relationships___file__file
+    relationships___file__file___changed
+    relationships___file__file___children
+    relationships___file__file___children___children
+    relationships___file__file___children___id
+    relationships___file__file___created
+    relationships___file__file___drupal_id
+    relationships___file__file___fid
+    relationships___file__file___filemime
+    relationships___file__file___filename
+    relationships___file__file___filesize
+    relationships___file__file___id
+    relationships___file__file___internal___content
+    relationships___file__file___internal___contentDigest
+    relationships___file__file___internal___description
+    relationships___file__file___internal___fieldOwners
+    relationships___file__file___internal___ignoreType
+    relationships___file__file___internal___mediaType
+    relationships___file__file___internal___owner
+    relationships___file__file___internal___type
+    relationships___file__file___langcode
+    relationships___file__file___localFile___absolutePath
+    relationships___file__file___localFile___accessTime
+    relationships___file__file___localFile___atime
+    relationships___file__file___localFile___atimeMs
+    relationships___file__file___localFile___base
+    relationships___file__file___localFile___birthTime
+    relationships___file__file___localFile___birthtime
+    relationships___file__file___localFile___birthtimeMs
+    relationships___file__file___localFile___blksize
+    relationships___file__file___localFile___blocks
+    relationships___file__file___localFile___changeTime
+    relationships___file__file___localFile___children
+    relationships___file__file___localFile___ctime
+    relationships___file__file___localFile___ctimeMs
+    relationships___file__file___localFile___dev
+    relationships___file__file___localFile___dir
+    relationships___file__file___localFile___ext
+    relationships___file__file___localFile___extension
+    relationships___file__file___localFile___gid
+    relationships___file__file___localFile___id
+    relationships___file__file___localFile___ino
+    relationships___file__file___localFile___mode
+    relationships___file__file___localFile___modifiedTime
+    relationships___file__file___localFile___mtime
+    relationships___file__file___localFile___mtimeMs
+    relationships___file__file___localFile___name
+    relationships___file__file___localFile___nlink
+    relationships___file__file___localFile___prettySize
+    relationships___file__file___localFile___publicURL
+    relationships___file__file___localFile___rdev
+    relationships___file__file___localFile___relativeDirectory
+    relationships___file__file___localFile___relativePath
+    relationships___file__file___localFile___root
+    relationships___file__file___localFile___size
+    relationships___file__file___localFile___sourceInstanceName
+    relationships___file__file___localFile___uid
+    relationships___file__file___localFile___url
+    relationships___file__file___parent___children
+    relationships___file__file___parent___id
+    relationships___file__file___relationships___user__user
+    relationships___file__file___status
+    relationships___file__file___uri___url
+    relationships___file__file___uri___value
+    relationships___file__file___url
+    relationships___file__file___uuid
+    relationships___node__article
+    relationships___node__article___body___format
+    relationships___node__article___body___processed
+    relationships___node__article___body___summary
+    relationships___node__article___body___value
+    relationships___node__article___changed
+    relationships___node__article___children
+    relationships___node__article___children___children
+    relationships___node__article___children___id
+    relationships___node__article___comment___cid
+    relationships___node__article___comment___comment_count
+    relationships___node__article___comment___last_comment_timestamp
+    relationships___node__article___comment___last_comment_uid
+    relationships___node__article___comment___status
+    relationships___node__article___content_translation_outdated
+    relationships___node__article___content_translation_source
+    relationships___node__article___created
+    relationships___node__article___default_langcode
+    relationships___node__article___drupal_id
+    relationships___node__article___id
+    relationships___node__article___internal___content
+    relationships___node__article___internal___contentDigest
+    relationships___node__article___internal___description
+    relationships___node__article___internal___fieldOwners
+    relationships___node__article___internal___ignoreType
+    relationships___node__article___internal___mediaType
+    relationships___node__article___internal___owner
+    relationships___node__article___internal___type
+    relationships___node__article___langcode
+    relationships___node__article___nid
+    relationships___node__article___parent___children
+    relationships___node__article___parent___id
+    relationships___node__article___path___langcode
+    relationships___node__article___promote
+    relationships___node__article___revision_timestamp
+    relationships___node__article___status
+    relationships___node__article___sticky
+    relationships___node__article___title
+    relationships___node__article___uuid
+    relationships___node__article___vid
+    relationships___node__code_contribution
+    relationships___node__code_contribution___body___format
+    relationships___node__code_contribution___body___processed
+    relationships___node__code_contribution___body___summary
+    relationships___node__code_contribution___body___value
+    relationships___node__code_contribution___changed
+    relationships___node__code_contribution___children
+    relationships___node__code_contribution___children___children
+    relationships___node__code_contribution___children___id
+    relationships___node__code_contribution___content_translation_outdated
+    relationships___node__code_contribution___content_translation_source
+    relationships___node__code_contribution___created
+    relationships___node__code_contribution___default_langcode
+    relationships___node__code_contribution___drupal_id
+    relationships___node__code_contribution___id
+    relationships___node__code_contribution___internal___content
+    relationships___node__code_contribution___internal___contentDigest
+    relationships___node__code_contribution___internal___description
+    relationships___node__code_contribution___internal___fieldOwners
+    relationships___node__code_contribution___internal___ignoreType
+    relationships___node__code_contribution___internal___mediaType
+    relationships___node__code_contribution___internal___owner
+    relationships___node__code_contribution___internal___type
+    relationships___node__code_contribution___langcode
+    relationships___node__code_contribution___nid
+    relationships___node__code_contribution___parent___children
+    relationships___node__code_contribution___parent___id
+    relationships___node__code_contribution___path___langcode
+    relationships___node__code_contribution___promote
+    relationships___node__code_contribution___revision_timestamp
+    relationships___node__code_contribution___revision_translation_affected
+    relationships___node__code_contribution___status
+    relationships___node__code_contribution___sticky
+    relationships___node__code_contribution___title
+    relationships___node__code_contribution___uuid
+    relationships___node__code_contribution___vid
+    relationships___user_picture___changed
+    relationships___user_picture___children
+    relationships___user_picture___children___children
+    relationships___user_picture___children___id
+    relationships___user_picture___created
+    relationships___user_picture___drupal_id
+    relationships___user_picture___fid
+    relationships___user_picture___filemime
+    relationships___user_picture___filename
+    relationships___user_picture___filesize
+    relationships___user_picture___id
+    relationships___user_picture___internal___content
+    relationships___user_picture___internal___contentDigest
+    relationships___user_picture___internal___description
+    relationships___user_picture___internal___fieldOwners
+    relationships___user_picture___internal___ignoreType
+    relationships___user_picture___internal___mediaType
+    relationships___user_picture___internal___owner
+    relationships___user_picture___internal___type
+    relationships___user_picture___langcode
+    relationships___user_picture___localFile___absolutePath
+    relationships___user_picture___localFile___accessTime
+    relationships___user_picture___localFile___atime
+    relationships___user_picture___localFile___atimeMs
+    relationships___user_picture___localFile___base
+    relationships___user_picture___localFile___birthTime
+    relationships___user_picture___localFile___birthtime
+    relationships___user_picture___localFile___birthtimeMs
+    relationships___user_picture___localFile___blksize
+    relationships___user_picture___localFile___blocks
+    relationships___user_picture___localFile___changeTime
+    relationships___user_picture___localFile___children
+    relationships___user_picture___localFile___ctime
+    relationships___user_picture___localFile___ctimeMs
+    relationships___user_picture___localFile___dev
+    relationships___user_picture___localFile___dir
+    relationships___user_picture___localFile___ext
+    relationships___user_picture___localFile___extension
+    relationships___user_picture___localFile___gid
+    relationships___user_picture___localFile___id
+    relationships___user_picture___localFile___ino
+    relationships___user_picture___localFile___mode
+    relationships___user_picture___localFile___modifiedTime
+    relationships___user_picture___localFile___mtime
+    relationships___user_picture___localFile___mtimeMs
+    relationships___user_picture___localFile___name
+    relationships___user_picture___localFile___nlink
+    relationships___user_picture___localFile___prettySize
+    relationships___user_picture___localFile___publicURL
+    relationships___user_picture___localFile___rdev
+    relationships___user_picture___localFile___relativeDirectory
+    relationships___user_picture___localFile___relativePath
+    relationships___user_picture___localFile___root
+    relationships___user_picture___localFile___size
+    relationships___user_picture___localFile___sourceInstanceName
+    relationships___user_picture___localFile___uid
+    relationships___user_picture___localFile___url
+    relationships___user_picture___parent___children
+    relationships___user_picture___parent___id
+    relationships___user_picture___relationships___user__user
+    relationships___user_picture___status
+    relationships___user_picture___uri___url
+    relationships___user_picture___uri___value
+    relationships___user_picture___url
+    relationships___user_picture___uuid
+    uid
+    user_picture___alt
+    user_picture___height
+    user_picture___title
+    user_picture___width
+    uuid
+}
+
+input BooleanQueryOperatorInput {
+    eq: Boolean
+    in: [Boolean]
+    ne: Boolean
+    nin: [Boolean]
+}
+
+input DateQueryOperatorInput {
+    eq: Date
+    gt: Date
+    gte: Date
+    in: [Date]
+    lt: Date
+    lte: Date
+    ne: Date
+    nin: [Date]
+}
+
+input DirectoryFilterInput {
+    absolutePath: StringQueryOperatorInput
+    accessTime: DateQueryOperatorInput
+    atime: DateQueryOperatorInput
+    atimeMs: FloatQueryOperatorInput
+    base: StringQueryOperatorInput
+    birthTime: DateQueryOperatorInput
+    birthtime: DateQueryOperatorInput
+    birthtimeMs: FloatQueryOperatorInput
+    blksize: IntQueryOperatorInput
+    blocks: IntQueryOperatorInput
+    changeTime: DateQueryOperatorInput
+    children: NodeFilterListInput
+    ctime: DateQueryOperatorInput
+    ctimeMs: FloatQueryOperatorInput
+    dev: IntQueryOperatorInput
+    dir: StringQueryOperatorInput
+    ext: StringQueryOperatorInput
+    extension: StringQueryOperatorInput
+    gid: IntQueryOperatorInput
+    id: StringQueryOperatorInput
+    ino: IntQueryOperatorInput
+    internal: InternalFilterInput
+    mode: IntQueryOperatorInput
+    modifiedTime: DateQueryOperatorInput
+    mtime: DateQueryOperatorInput
+    mtimeMs: FloatQueryOperatorInput
+    name: StringQueryOperatorInput
+    nlink: IntQueryOperatorInput
+    parent: NodeFilterInput
+    prettySize: StringQueryOperatorInput
+    rdev: IntQueryOperatorInput
+    relativeDirectory: StringQueryOperatorInput
+    relativePath: StringQueryOperatorInput
+    root: StringQueryOperatorInput
+    size: IntQueryOperatorInput
+    sourceInstanceName: StringQueryOperatorInput
+    uid: IntQueryOperatorInput
+}
+
+input DirectorySortInput {
+    fields: [DirectoryFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input DuotoneGradient {
+    highlight: String!
+    opacity: Int
+    shadow: String!
+}
+
+input FileFilterInput {
+    absolutePath: StringQueryOperatorInput
+    accessTime: DateQueryOperatorInput
+    atime: DateQueryOperatorInput
+    atimeMs: FloatQueryOperatorInput
+    base: StringQueryOperatorInput
+    birthTime: DateQueryOperatorInput
+    birthtime: DateQueryOperatorInput
+    birthtimeMs: FloatQueryOperatorInput
+    blksize: IntQueryOperatorInput
+    blocks: IntQueryOperatorInput
+    changeTime: DateQueryOperatorInput
+    childImageSharp: ImageSharpFilterInput
+    children: NodeFilterListInput
+    ctime: DateQueryOperatorInput
+    ctimeMs: FloatQueryOperatorInput
+    dev: IntQueryOperatorInput
+    dir: StringQueryOperatorInput
+    ext: StringQueryOperatorInput
+    extension: StringQueryOperatorInput
+    gid: IntQueryOperatorInput
+    id: StringQueryOperatorInput
+    ino: IntQueryOperatorInput
+    internal: InternalFilterInput
+    mode: IntQueryOperatorInput
+    modifiedTime: DateQueryOperatorInput
+    mtime: DateQueryOperatorInput
+    mtimeMs: FloatQueryOperatorInput
+    name: StringQueryOperatorInput
+    nlink: IntQueryOperatorInput
+    parent: NodeFilterInput
+    prettySize: StringQueryOperatorInput
+    publicURL: StringQueryOperatorInput
+    rdev: IntQueryOperatorInput
+    relativeDirectory: StringQueryOperatorInput
+    relativePath: StringQueryOperatorInput
+    root: StringQueryOperatorInput
+    size: IntQueryOperatorInput
+    sourceInstanceName: StringQueryOperatorInput
+    uid: IntQueryOperatorInput
+    url: StringQueryOperatorInput
+}
+
+input FileSortInput {
+    fields: [FileFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input FloatQueryOperatorInput {
+    eq: Float
+    gt: Float
+    gte: Float
+    in: [Float]
+    lt: Float
+    lte: Float
+    ne: Float
+    nin: [Float]
+}
+
+input ImageSharpFilterInput {
+    children: NodeFilterListInput
+    fixed: ImageSharpFixedFilterInput
+    fluid: ImageSharpFluidFilterInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    original: ImageSharpOriginalFilterInput
+    parent: NodeFilterInput
+    resize: ImageSharpResizeFilterInput
+    resolutions: ImageSharpResolutionsFilterInput
+    sizes: ImageSharpSizesFilterInput
+}
+
+input ImageSharpFixedFilterInput {
+    aspectRatio: FloatQueryOperatorInput
+    base64: StringQueryOperatorInput
+    height: FloatQueryOperatorInput
+    originalName: StringQueryOperatorInput
+    src: StringQueryOperatorInput
+    srcSet: StringQueryOperatorInput
+    srcSetWebp: StringQueryOperatorInput
+    srcWebp: StringQueryOperatorInput
+    tracedSVG: StringQueryOperatorInput
+    width: FloatQueryOperatorInput
+}
+
+input ImageSharpFluidFilterInput {
+    aspectRatio: FloatQueryOperatorInput
+    base64: StringQueryOperatorInput
+    originalImg: StringQueryOperatorInput
+    originalName: StringQueryOperatorInput
+    presentationHeight: IntQueryOperatorInput
+    presentationWidth: IntQueryOperatorInput
+    sizes: StringQueryOperatorInput
+    src: StringQueryOperatorInput
+    srcSet: StringQueryOperatorInput
+    srcSetWebp: StringQueryOperatorInput
+    srcWebp: StringQueryOperatorInput
+    tracedSVG: StringQueryOperatorInput
+}
+
+input ImageSharpOriginalFilterInput {
+    height: FloatQueryOperatorInput
+    src: StringQueryOperatorInput
+    width: FloatQueryOperatorInput
+}
+
+input ImageSharpResizeFilterInput {
+    aspectRatio: FloatQueryOperatorInput
+    height: IntQueryOperatorInput
+    originalName: StringQueryOperatorInput
+    src: StringQueryOperatorInput
+    tracedSVG: StringQueryOperatorInput
+    width: IntQueryOperatorInput
+}
+
+input ImageSharpResolutionsFilterInput {
+    aspectRatio: FloatQueryOperatorInput
+    base64: StringQueryOperatorInput
+    height: FloatQueryOperatorInput
+    originalName: StringQueryOperatorInput
+    src: StringQueryOperatorInput
+    srcSet: StringQueryOperatorInput
+    srcSetWebp: StringQueryOperatorInput
+    srcWebp: StringQueryOperatorInput
+    tracedSVG: StringQueryOperatorInput
+    width: FloatQueryOperatorInput
+}
+
+input ImageSharpSizesFilterInput {
+    aspectRatio: FloatQueryOperatorInput
+    base64: StringQueryOperatorInput
+    originalImg: StringQueryOperatorInput
+    originalName: StringQueryOperatorInput
+    presentationHeight: IntQueryOperatorInput
+    presentationWidth: IntQueryOperatorInput
+    sizes: StringQueryOperatorInput
+    src: StringQueryOperatorInput
+    srcSet: StringQueryOperatorInput
+    srcSetWebp: StringQueryOperatorInput
+    srcWebp: StringQueryOperatorInput
+    tracedSVG: StringQueryOperatorInput
+}
+
+input ImageSharpSortInput {
+    fields: [ImageSharpFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input IntQueryOperatorInput {
+    eq: Int
+    gt: Int
+    gte: Int
+    in: [Int]
+    lt: Int
+    lte: Int
+    ne: Int
+    nin: [Int]
+}
+
+input InternalFilterInput {
+    content: StringQueryOperatorInput
+    contentDigest: StringQueryOperatorInput
+    description: StringQueryOperatorInput
+    fieldOwners: StringQueryOperatorInput
+    ignoreType: BooleanQueryOperatorInput
+    mediaType: StringQueryOperatorInput
+    owner: StringQueryOperatorInput
+    type: StringQueryOperatorInput
+}
+
+input NodeFilterInput {
+    children: NodeFilterListInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    parent: NodeFilterInput
+}
+
+input NodeFilterListInput {
+    elemMatch: NodeFilterInput
+}
+
+input Potrace {
+    alphaMax: Float
+    background: String
+    blackOnWhite: Boolean
+    color: String
+    optCurve: Boolean
+    optTolerance: Float
+    threshold: Int
+    turdSize: Float
+    turnPolicy: PotraceTurnPolicy
+}
+
+input SiteFilterInput {
+    buildTime: DateQueryOperatorInput
+    children: NodeFilterListInput
+    host: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    parent: NodeFilterInput
+    pathPrefix: StringQueryOperatorInput
+    polyfill: BooleanQueryOperatorInput
+    port: IntQueryOperatorInput
+    siteMetadata: SiteSiteMetadataFilterInput
+}
+
+input SitePageContextFilterInput {
+    drupalId: StringQueryOperatorInput
+    nid: IntQueryOperatorInput
+    slug: IntQueryOperatorInput
+}
+
+input SitePageFilterInput {
+    children: NodeFilterListInput
+    component: StringQueryOperatorInput
+    componentChunkName: StringQueryOperatorInput
+    componentPath: StringQueryOperatorInput
+    context: SitePageContextFilterInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    internalComponentName: StringQueryOperatorInput
+    isCreatedByStatefulCreatePages: BooleanQueryOperatorInput
+    parent: NodeFilterInput
+    path: StringQueryOperatorInput
+    pluginCreator: SitePluginFilterInput
+    pluginCreatorId: StringQueryOperatorInput
+}
+
+input SitePageSortInput {
+    fields: [SitePageFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input SitePluginFilterInput {
+    browserAPIs: StringQueryOperatorInput
+    children: NodeFilterListInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    name: StringQueryOperatorInput
+    nodeAPIs: StringQueryOperatorInput
+    packageJson: SitePluginPackageJsonFilterInput
+    parent: NodeFilterInput
+    pluginFilepath: StringQueryOperatorInput
+    pluginOptions: SitePluginPluginOptionsFilterInput
+    resolve: StringQueryOperatorInput
+    ssrAPIs: StringQueryOperatorInput
+    version: StringQueryOperatorInput
+}
+
+input SitePluginPackageJsonDependenciesFilterInput {
+    name: StringQueryOperatorInput
+    version: StringQueryOperatorInput
+}
+
+input SitePluginPackageJsonDependenciesFilterListInput {
+    elemMatch: SitePluginPackageJsonDependenciesFilterInput
+}
+
+input SitePluginPackageJsonDevDependenciesFilterInput {
+    name: StringQueryOperatorInput
+    version: StringQueryOperatorInput
+}
+
+input SitePluginPackageJsonDevDependenciesFilterListInput {
+    elemMatch: SitePluginPackageJsonDevDependenciesFilterInput
+}
+
+input SitePluginPackageJsonFilterInput {
+    dependencies: SitePluginPackageJsonDependenciesFilterListInput
+    description: StringQueryOperatorInput
+    devDependencies: SitePluginPackageJsonDevDependenciesFilterListInput
+    keywords: StringQueryOperatorInput
+    license: StringQueryOperatorInput
+    main: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    peerDependencies: SitePluginPackageJsonPeerDependenciesFilterListInput
+    version: StringQueryOperatorInput
+}
+
+input SitePluginPackageJsonPeerDependenciesFilterInput {
+    name: StringQueryOperatorInput
+    version: StringQueryOperatorInput
+}
+
+input SitePluginPackageJsonPeerDependenciesFilterListInput {
+    elemMatch: SitePluginPackageJsonPeerDependenciesFilterInput
+}
+
+input SitePluginPluginOptionsFilterInput {
+    apiBase: StringQueryOperatorInput
+    background_color: StringQueryOperatorInput
+    baseUrl: StringQueryOperatorInput
+    display: StringQueryOperatorInput
+    icon: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    path: StringQueryOperatorInput
+    pathCheck: BooleanQueryOperatorInput
+    short_name: StringQueryOperatorInput
+    start_url: StringQueryOperatorInput
+    theme_color: StringQueryOperatorInput
+}
+
+input SitePluginSortInput {
+    fields: [SitePluginFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input SiteSiteMetadataFilterInput {
+    author: StringQueryOperatorInput
+    description: StringQueryOperatorInput
+    title: StringQueryOperatorInput
+}
+
+input SiteSortInput {
+    fields: [SiteFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input StringQueryOperatorInput {
+    eq: String
+    glob: String
+    in: [String]
+    ne: String
+    nin: [String]
+    regex: String
+}
+
+input block__blockDependenciesFilterInput {
+    config: StringQueryOperatorInput
+    module: StringQueryOperatorInput
+    theme: StringQueryOperatorInput
+}
+
+input block__blockFilterInput {
+    _attributes_id: StringQueryOperatorInput
+    children: NodeFilterListInput
+    dependencies: block__blockDependenciesFilterInput
+    drupal_id: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    langcode: StringQueryOperatorInput
+    parent: NodeFilterInput
+    plugin: StringQueryOperatorInput
+    region: StringQueryOperatorInput
+    settings: block__blockSettingsFilterInput
+    status: BooleanQueryOperatorInput
+    theme: StringQueryOperatorInput
+    uuid: StringQueryOperatorInput
+    visibility: block__blockVisibilityFilterInput
+    weight: IntQueryOperatorInput
+}
+
+input block__blockSettingsFilterInput {
+    depth: IntQueryOperatorInput
+    id: StringQueryOperatorInput
+    label: StringQueryOperatorInput
+    label_display: StringQueryOperatorInput
+    level: IntQueryOperatorInput
+    primary: BooleanQueryOperatorInput
+    provider: StringQueryOperatorInput
+    secondary: BooleanQueryOperatorInput
+    use_site_logo: BooleanQueryOperatorInput
+    use_site_name: BooleanQueryOperatorInput
+    use_site_slogan: BooleanQueryOperatorInput
+}
+
+input block__blockSortInput {
+    fields: [block__blockFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input block__blockVisibilityFilterInput {
+    language: block__blockVisibilityLanguageFilterInput
+}
+
+input block__blockVisibilityLanguageContext_mappingFilterInput {
+    language: StringQueryOperatorInput
+}
+
+input block__blockVisibilityLanguageFilterInput {
+    context_mapping: block__blockVisibilityLanguageContext_mappingFilterInput
+    id: StringQueryOperatorInput
+    langcodes: block__blockVisibilityLanguageLangcodesFilterInput
+    negate: BooleanQueryOperatorInput
+}
+
+input block__blockVisibilityLanguageLangcodesFilterInput {
+    en: StringQueryOperatorInput
+    gu: StringQueryOperatorInput
+    hi: StringQueryOperatorInput
+}
+
+input contact_form__contact_formFilterInput {
+    _attributes_id: StringQueryOperatorInput
+    children: NodeFilterListInput
+    drupal_id: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    label: StringQueryOperatorInput
+    langcode: StringQueryOperatorInput
+    message: StringQueryOperatorInput
+    parent: NodeFilterInput
+    recipients: StringQueryOperatorInput
+    redirect: StringQueryOperatorInput
+    reply: StringQueryOperatorInput
+    status: BooleanQueryOperatorInput
+    uuid: StringQueryOperatorInput
+    weight: IntQueryOperatorInput
+}
+
+input contact_form__contact_formSortInput {
+    fields: [contact_form__contact_formFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input file__fileFilterInput {
+    changed: IntQueryOperatorInput
+    children: NodeFilterListInput
+    created: IntQueryOperatorInput
+    drupal_id: StringQueryOperatorInput
+    fid: IntQueryOperatorInput
+    filemime: StringQueryOperatorInput
+    filename: StringQueryOperatorInput
+    filesize: IntQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    langcode: StringQueryOperatorInput
+    localFile: FileFilterInput
+    parent: NodeFilterInput
+    relationships: file__fileRelationshipsFilterInput
+    status: BooleanQueryOperatorInput
+    uri: file__fileUriFilterInput
+    url: StringQueryOperatorInput
+    uuid: StringQueryOperatorInput
+}
+
+input file__fileFilterListInput {
+    elemMatch: file__fileFilterInput
+}
+
+input file__fileRelationshipsFilterInput {
+    uid: user__userFilterInput
+    user__user: user__userFilterListInput
+}
+
+input file__fileSortInput {
+    fields: [file__fileFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input file__fileUriFilterInput {
+    url: StringQueryOperatorInput
+    value: StringQueryOperatorInput
+}
+
+input node__articleBodyFilterInput {
+    format: StringQueryOperatorInput
+    processed: StringQueryOperatorInput
+    summary: StringQueryOperatorInput
+    value: StringQueryOperatorInput
+}
+
+input node__articleCommentFilterInput {
+    cid: IntQueryOperatorInput
+    comment_count: IntQueryOperatorInput
+    last_comment_timestamp: IntQueryOperatorInput
+    last_comment_uid: IntQueryOperatorInput
+    status: IntQueryOperatorInput
+}
+
+input node__articleFilterInput {
+    body: node__articleBodyFilterInput
+    changed: IntQueryOperatorInput
+    children: NodeFilterListInput
+    comment: node__articleCommentFilterInput
+    content_translation_outdated: BooleanQueryOperatorInput
+    content_translation_source: StringQueryOperatorInput
+    created: IntQueryOperatorInput
+    default_langcode: BooleanQueryOperatorInput
+    drupal_id: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    langcode: StringQueryOperatorInput
+    nid: IntQueryOperatorInput
+    parent: NodeFilterInput
+    path: node__articlePathFilterInput
+    promote: BooleanQueryOperatorInput
+    relationships: node__articleRelationshipsFilterInput
+    revision_timestamp: IntQueryOperatorInput
+    status: BooleanQueryOperatorInput
+    sticky: BooleanQueryOperatorInput
+    title: StringQueryOperatorInput
+    uuid: StringQueryOperatorInput
+    vid: IntQueryOperatorInput
+}
+
+input node__articleFilterListInput {
+    elemMatch: node__articleFilterInput
+}
+
+input node__articlePathFilterInput {
+    langcode: StringQueryOperatorInput
+}
+
+input node__articleRelationshipsFilterInput {
+    revision_uid: user__userFilterInput
+    type: node_type__node_typeFilterInput
+    uid: user__userFilterInput
+}
+
+input node__articleSortInput {
+    fields: [node__articleFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input node__code_contributionBodyFilterInput {
+    format: StringQueryOperatorInput
+    processed: StringQueryOperatorInput
+    summary: StringQueryOperatorInput
+    value: StringQueryOperatorInput
+}
+
+input node__code_contributionFilterInput {
+    body: node__code_contributionBodyFilterInput
+    changed: IntQueryOperatorInput
+    children: NodeFilterListInput
+    content_translation_outdated: BooleanQueryOperatorInput
+    content_translation_source: StringQueryOperatorInput
+    created: IntQueryOperatorInput
+    default_langcode: BooleanQueryOperatorInput
+    drupal_id: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    langcode: StringQueryOperatorInput
+    nid: IntQueryOperatorInput
+    parent: NodeFilterInput
+    path: node__code_contributionPathFilterInput
+    promote: BooleanQueryOperatorInput
+    relationships: node__code_contributionRelationshipsFilterInput
+    revision_timestamp: IntQueryOperatorInput
+    revision_translation_affected: BooleanQueryOperatorInput
+    status: BooleanQueryOperatorInput
+    sticky: BooleanQueryOperatorInput
+    title: StringQueryOperatorInput
+    uuid: StringQueryOperatorInput
+    vid: IntQueryOperatorInput
+}
+
+input node__code_contributionFilterListInput {
+    elemMatch: node__code_contributionFilterInput
+}
+
+input node__code_contributionPathFilterInput {
+    langcode: StringQueryOperatorInput
+}
+
+input node__code_contributionRelationshipsFilterInput {
+    revision_uid: user__userFilterInput
+    type: node_type__node_typeFilterInput
+    uid: user__userFilterInput
+}
+
+input node__code_contributionSortInput {
+    fields: [node__code_contributionFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input node_type__node_typeDependenciesFilterInput {
+    module: StringQueryOperatorInput
+}
+
+input node_type__node_typeFilterInput {
+    children: NodeFilterListInput
+    dependencies: node_type__node_typeDependenciesFilterInput
+    description: StringQueryOperatorInput
+    display_submitted: BooleanQueryOperatorInput
+    drupal_id: StringQueryOperatorInput
+    help: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    langcode: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    new_revision: BooleanQueryOperatorInput
+    parent: NodeFilterInput
+    preview_mode: IntQueryOperatorInput
+    relationships: node_type__node_typeRelationshipsFilterInput
+    status: BooleanQueryOperatorInput
+    third_party_settings: node_type__node_typeThird_party_settingsFilterInput
+    type: StringQueryOperatorInput
+    uuid: StringQueryOperatorInput
+}
+
+input node_type__node_typeRelationshipsFilterInput {
+    node__article: node__articleFilterListInput
+    node__code_contribution: node__code_contributionFilterListInput
+}
+
+input node_type__node_typeSortInput {
+    fields: [node_type__node_typeFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input node_type__node_typeThird_party_settingsFilterInput {
+    menu_ui: node_type__node_typeThird_party_settingsMenu_uiFilterInput
+}
+
+input node_type__node_typeThird_party_settingsMenu_uiFilterInput {
+    available_menus: StringQueryOperatorInput
+    parent: StringQueryOperatorInput
+}
+
+input search_page__search_pageDependenciesFilterInput {
+    module: StringQueryOperatorInput
+}
+
+input search_page__search_pageFilterInput {
+    _attributes_id: StringQueryOperatorInput
+    children: NodeFilterListInput
+    dependencies: search_page__search_pageDependenciesFilterInput
+    drupal_id: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    label: StringQueryOperatorInput
+    langcode: StringQueryOperatorInput
+    parent: NodeFilterInput
+    path: StringQueryOperatorInput
+    plugin: StringQueryOperatorInput
+    status: BooleanQueryOperatorInput
+    uuid: StringQueryOperatorInput
+    weight: IntQueryOperatorInput
+}
+
+input search_page__search_pageSortInput {
+    fields: [search_page__search_pageFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input taxonomy_term__tagsFilterInput {
+    changed: IntQueryOperatorInput
+    children: NodeFilterListInput
+    default_langcode: BooleanQueryOperatorInput
+    drupal_id: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    langcode: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    parent: NodeFilterInput
+    status: BooleanQueryOperatorInput
+    tid: IntQueryOperatorInput
+    uuid: StringQueryOperatorInput
+    weight: IntQueryOperatorInput
+}
+
+input taxonomy_term__tagsSortInput {
+    fields: [taxonomy_term__tagsFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input user__userFilterInput {
+    changed: IntQueryOperatorInput
+    children: NodeFilterListInput
+    created: IntQueryOperatorInput
+    default_langcode: BooleanQueryOperatorInput
+    drupal_id: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    langcode: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    parent: NodeFilterInput
+    relationships: user__userRelationshipsFilterInput
+    uid: IntQueryOperatorInput
+    user_picture: user__userUser_pictureFilterInput
+    uuid: StringQueryOperatorInput
+}
+
+input user__userFilterListInput {
+    elemMatch: user__userFilterInput
+}
+
+input user__userRelationshipsFilterInput {
+    file__file: file__fileFilterListInput
+    node__article: node__articleFilterListInput
+    node__code_contribution: node__code_contributionFilterListInput
+    user_picture: file__fileFilterInput
+}
+
+input user__userSortInput {
+    fields: [user__userFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input user__userUser_pictureFilterInput {
+    alt: StringQueryOperatorInput
+    height: IntQueryOperatorInput
+    title: StringQueryOperatorInput
+    width: IntQueryOperatorInput
+}
+
+
+"A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar Date
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
